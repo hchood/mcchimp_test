@@ -1,0 +1,12 @@
+<h3>Add a New Member</h3>
+<p>Please enter your contact information to subscribe to our newsletter.</p>
+
+<%= form_tag('/mcsubscribe/subscribe', method: "post", id: "mcsubscribe") do -%>
+   <%= text_field(:person, :first_name) %>
+   <%= text_field(:person, :last_name) %>
+   <%= text_field(:person, :company) %>
+   <%= email_field(:person, :email, {id: "email", placeholder: "email address"}) %>
+   <%= submit_tag("Subscribe") %>
+<% end %>
+
+<p class="notice"><%= notice %></p>
